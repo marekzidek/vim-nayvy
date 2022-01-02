@@ -146,7 +146,7 @@ def _from_vim_config_enum(
         try:
             enum = t(config_var.env_variable_value)
         except Exception:
-            print(f'[Nayvy Error] Environment Variable {config_var.env_variable_name} valued g{:config_var.vim_variable_value} should be either in {[e.value for e in t]}', file=sys.stderr)  # noqa
+            print(f'[Nayvy Error] Environment Variable {config_var.env_variable_name} valued g:{config_var.vim_variable_value} should be either in {[e.value for e in t]}', file=sys.stderr)  # noqa
             return default
         return enum
 
@@ -154,7 +154,7 @@ def _from_vim_config_enum(
         try:
             enum = t(config_var.vim_variable_value)
         except Exception:
-            print(f'[Nayvy Error] Global Variable g:{config_var.vim_variable_name} valued g{:config_var.vim_variable_value} should be either in {[e.value for e in t]}', file=sys.stderr)  # noqa
+            print(f'[Nayvy Error] Global Variable g:{config_var.vim_variable_name} valued g:{config_var.vim_variable_value} should be either in {[e.value for e in t]}', file=sys.stderr)  # noqa
             return default
         return enum
     return default
